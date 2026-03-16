@@ -10,6 +10,7 @@ services:
     volumes:
       - ./schema/raw_tables.sql:/docker-entrypoint-initdb.d/01_raw_tables.sql
       - ./data/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+      - ./etl/01_dedup.sql:/docker-entrypoint-initdb.d/03_dedup.sql
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "admin", "-d", "hr_analytics"]
       interval: 5s
