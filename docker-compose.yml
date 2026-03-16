@@ -11,6 +11,7 @@ services:
       - ./schema/raw_tables.sql:/docker-entrypoint-initdb.d/01_raw_tables.sql
       - ./data/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
       - ./etl/01_dedup.sql:/docker-entrypoint-initdb.d/03_dedup.sql
+      - ./etl/02_dq_checks.sql:/docker-entrypoint-initdb.d/04_dq_checks.sql
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "admin", "-d", "hr_analytics"]
       interval: 5s
