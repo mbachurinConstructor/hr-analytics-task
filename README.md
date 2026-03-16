@@ -96,11 +96,3 @@ bash bash_scripts/run_monthly_pipeline.sh
 # Cumulative hires by source
 bash bash_scripts/run_cumulative_hires.sh
 ```
-
-
-## Live Database
-A live instance is deployed and accessible at:
-```bash
-psql -h <I will provide in a sec> -p 5433 -U admin -d hr_analytics
-```
-Password: admin
