@@ -19,7 +19,7 @@ SELECT
     SUM(hires_this_month) OVER (
         PARTITION BY source
         ORDER BY month
-        ROWS BETWEEN UNBOUNDED AND CURRENT ROW
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
     ) AS cumulative_hires
 FROM monthly_hires
 ORDER BY source, month;
