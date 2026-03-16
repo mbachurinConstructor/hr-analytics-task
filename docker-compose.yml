@@ -8,9 +8,9 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - ./schema:/docker-entrypoint-initdb.d/01_schema
-      - ./data:/docker-entrypoint-initdb.d/02_data
+      - ./schema/raw_tables.sql:/docker-entrypoint-initdb.d/01_raw_tables.sql
+      - ./data/seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "admin"]
+      test: ["CMD", "pg_isready", "-U", "admin", "-d", "hr_analytics"]
       interval: 5s
       retries: 5
