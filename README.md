@@ -96,6 +96,6 @@ bash bash_scripts/run_monthly_pipeline.sh
 # Cumulative hires by source
 bash bash_scripts/run_cumulative_hires.sh
 
-# Open Postgres terminal 
+# Open Postgres terminal for manual investigation
 bash bash_scripts/open_db_terminal.sh
 ```
